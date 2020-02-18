@@ -14,7 +14,7 @@ SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 RUN apt-get update && apt-get -y --no-install-recommends install zlib1g-dev liblzma-dev wget xvfb unzip libgconf-2-4 libnss3 nodejs \
  && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -  \
  && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list \
- && apt-get update && apt-get -y --no-install-recommends install google-chrome-stable=$CHROME_VERSION \
+ && apt-get update && apt-get -y --no-install-recommends install google-chrome-stable=$CHROME_VERSION fonts-ipafont fonts-ipaexfont \
  && rm -rf /var/lib/apt/lists/*
 
 # Install Chrome driver
